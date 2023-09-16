@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-
+//import xpath from "cypress-xpath";
 
 /*contex("", () => {   группирует тесты
     ...
@@ -40,3 +40,5 @@ describe("Second suite", () => {
 
     })
 })
+
+
