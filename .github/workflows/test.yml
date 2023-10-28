@@ -18,11 +18,16 @@ jobs:
       - name: Run tests
         run: npm run cypress:e2e
       - name: Generate report
-        run: npm run resault:html
+        run: npm run result:html
         if: failure() || success()
       - name: Save test report
         uses: actions/upload-artifact@v3
         with:
           path: mochawesome-report
           name: Test Report
+        if: failure() || success()
+      - name: Get test report
+        uses: actions/download-artifact@v3
+        with: 
+          name: test Report
         if: failure() || success()
