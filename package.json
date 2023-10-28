@@ -29,7 +29,7 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "cypress:run": "npm run prereport ; npx cypress run --browser chrome --spec 'cypress/e2e/specs_for_hedless_run/**' ; npm run resault:html",
+    "cypress:run": "npx cypress run --browser chrome --spec 'cypress/e2e/specs_for_hedless_run/**'",
     "resault:html": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "cypress:e2e":"start-test start http-get://localhost:4200/ cypress:run",
     "delete:reports": "rm -r cypress/results/* || true",
