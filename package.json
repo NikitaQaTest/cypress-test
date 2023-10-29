@@ -31,10 +31,9 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "cypress:run": "npx cypress run --browser edge --spec 'cypress/e2e/specs_for_hedless_run/**'",
     "result:html": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "cypress:e2e":"start-test start http-get://localhost:4200/ cypress:run",
+    "cypress:e2e": "start-test start http-get://localhost:4200/ cypress:run",
     "delete:reports": "rm -r cypress/results/* || true",
     "prereport": "npm run delete:reports"
-    
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
@@ -99,7 +98,7 @@
     "@types/node": "6.0.90",
     "codelyzer": "^5.0.1",
     "conventional-changelog-cli": "^2.1.1",
-    "cypress": "^13.2.0",
+    "cypress": "^13.3.3",
     "cypress-xpath": "^2.0.1",
     "husky": "0.13.3",
     "mochawesome": "^7.1.3",

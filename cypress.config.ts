@@ -1,9 +1,9 @@
 import { defineConfig } from "cypress";
 
-module.exports = {
-  projectId: "zonr7a",
-  // ...rest of the Cypress project config
-};
+// module.exports = {
+//   projectId: "zonr7a",
+//   // ...rest of the Cypress project config
+// };
 
   export default defineConfig({
     //reporter: 'mochawesome',
