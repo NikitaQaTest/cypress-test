@@ -1,13 +1,8 @@
 import { defineConfig } from "cypress";
 
-// module.exports = {
-//   projectId: "zonr7a",
-//   // ...rest of the Cypress project config
-// };
-
   export default defineConfig({
   projectId: 'zonr7a',
-    //reporter: 'mochawesome',
+    reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'cypress/results',
       overwrite: false,
@@ -19,6 +14,20 @@ import { defineConfig } from "cypress";
     e2e: {
       setupNodeEvents(on, config) {
         // implement node event listeners here
+        on("task", {
+          logToConsole(message) {
+            console.log(message);
+            return null;
+          }
+        });
+        on("before:browser:launch", (browser, launchOptions) => {
+          if (browser.name === "chrome") {
+          launchOptions.args.push("--incognito");
+          }
+          return launchOptions;
+        });
+  
+        return config;
       },
       specPattern: "cypress/e2e/**/*.spec.{js,jsx,ts,tsx}",  //образец файлов .spec.
       excludeSpecPattern: ["**/2-advanced-exampless"],  //эти файлы не рассматриваются 
