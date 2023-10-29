@@ -2,7 +2,7 @@ name: My Test Workflow
 on: 
   workflow_dispatch:
   push:
-    branches:  #для выливки
+    branches:  
       -master
 
 env:
