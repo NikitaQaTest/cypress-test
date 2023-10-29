@@ -25,7 +25,7 @@ jobs:
       - name: Generate report
         run: npm run result:html
         if: failure() || success()
-      - name: Save test report
+      - name: Save Test Report
         uses: actions/upload-artifact@v3
         with:
           path: mochawesome-report
@@ -34,7 +34,7 @@ jobs:
       - name: Get test report
         uses: actions/download-artifact@v3
         with: 
-          name: test Report
+          name: Test Report
         if: failure() || success()
   testing2:
     runs-on: ubuntu-latest
