@@ -31,7 +31,7 @@ jobs:
           path: mochawesome-report
           name: Test Report
         if: failure() || success()
-      - name: Get test report
+      - name: Get Test report
         uses: actions/download-artifact@v3
         with: 
           name: Test Report
