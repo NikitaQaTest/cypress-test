@@ -22,16 +22,16 @@ jobs:
         run: npm install --force  
       - name: Run tests
         run: npm run cypress:e2e
-      - name: Generate Test Report
+      - name: Generate reports
         run: npm run result:html
         if: failure() || success()
-      - name: Save Test Report
+      - name: Save test report
         uses: actions/upload-artifact@v3
         with:
           path: mochawesome-report
           name: Test Report
         if: failure() || success()
-      - name: Get Test Report
+      - name: Get test report
         uses: actions/download-artifact@v3
         with: 
           name: Test Report
