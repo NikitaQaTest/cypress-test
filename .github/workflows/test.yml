@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:  
-      -master     #для выливки
+      -master     #для выливки1
 
 env:
   RECORD_KEY: ${{ secrets.RECORD_KEY}}
