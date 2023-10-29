@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
-      options: --user 1001 #для выливки
+      options: --user 1001 
     steps:
       - name: Add env vars
         run: export RECORD_KEY=${{env.RECORD_KEY}}   
@@ -22,7 +22,7 @@ jobs:
         run: npm install --force  
       - name: Run tests
         run: npm run cypress:e2e
-      - name: Generate report
+      - name: Generate Test Report
         run: npm run result:html
         if: failure() || success()
       - name: Save Test Report
@@ -31,7 +31,7 @@ jobs:
           path: mochawesome-report
           name: Test Report
         if: failure() || success()
-      - name: Get Test report
+      - name: Get Test Report
         uses: actions/download-artifact@v3
         with: 
           name: Test Report
