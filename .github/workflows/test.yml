@@ -15,7 +15,7 @@ jobs:
       options: --user 1001 
     steps:
       - name: Add env vars
-        run: export RECORD_KEY=${{env.RECORD_KEY}}   
+        run: export RECORD_KEY=${{env.RECORD_KEY}}   #для выливки 
       - name: Get the project code
         uses: actions/checkout@v4
       - name: Install dependencies
